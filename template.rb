@@ -1,23 +1,18 @@
 require "fileutils"
 require "shellwords"
 
-# Copied from: https://github.com/mattbrictson/rails-template
-# Add this template directory to source_paths so that Thor actions like
-# copy_file and template resolve against our source files. If this file was
-# invoked remotely via HTTP, that means the files are not present locally.
-# In that case, use `git clone` to download them to a local temporary dir.
 def add_template_repository_to_source_path
   if __FILE__ =~ %r{\Ahttps?://}
     require "tmpdir"
-    source_paths.unshift(tempdir = Dir.mktmpdir("jumpstart-"))
+    source_paths.unshift(tempdir = Dir.mktmpdir("startup-"))
     at_exit { FileUtils.remove_entry(tempdir) }
     git clone: [
       "--quiet",
-      "https://github.com/excid3/jumpstart.git",
+      "https://github.com/repaera/startup.git",
       tempdir
     ].map(&:shellescape).join(" ")
 
-    if (branch = __FILE__[%r{jumpstart/(.+)/template.rb}, 1])
+    if (branch = __FILE__[%r{startup/(.+)/template.rb}, 1])
       Dir.chdir(tempdir) { git checkout: branch }
     end
   else
@@ -108,9 +103,6 @@ def add_gems
   gem 'rack-attack', '~> 6.5'  # https://github.com/rack/rack-attack/
   gem 'turnout', '~> 2.5'  # https://github.com/biola/turnout/
   gem 'split', '~> 3.4', '>= 3.4.1'  # https://github.com/splitrb/split/
-  gem 'flipper-active_record'  # https://github.com/jnunemaker/flipper/tree/master/docs/active_record
-  gem 'flipper-active_support_cache_store'
-  gem 'flipper-ui'  # https://github.com/jnunemaker/flipper/blob/master/docs/ui/README.md
   gem 'browser', '~> 5.3', '>= 5.3.1'  # https://github.com/fnando/browser/
   gem 'wicked', '~> 1.3', '>= 1.3.4'  # https://github.com/schneems/wicked/
   gem 'attr_encrypted', '~> 3.1'  # https://github.com/attr-encrypted/attr_encrypted/
@@ -147,7 +139,7 @@ def add_gems
   gem 'lavatar', '~> 0.1.5'  # https://github.com/jkostolansky/lavatar/
   gem 'fast_blank', '~> 1.0'  # https://github.com/SamSaffron/fast_blank/
   gem 'httparty', '~> 0.18.1'  # https://github.com/jnunemaker/httparty/
-  gem 'sanitize', '~> 6.0'            # https://github.com/rgrove/sanitize/
+  gem 'sanitize', '~> 6.0'  # https://github.com/rgrove/sanitize/
   gem 'rinku', '~> 2.0', '>= 2.0.6'  # https://github.com/vmg/rinku/
   gem 'diffy', '~> 3.4'  # https://github.com/samg/diffy/
   gem 'fastimage', '~> 2.2', '>= 2.2.4'  # https://github.com/sdsykes/fastimage/
@@ -375,7 +367,7 @@ after_bundle do
   end
 
   say
-  say "Jumpstart app successfully created!", :blue
+  say "Startup is done!", :blue
   say
   say "To get started with your new app:", :green
   say "  cd #{original_app_name}"

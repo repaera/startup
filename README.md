@@ -1,10 +1,8 @@
-# PowerUp
+# Startup Rails Template
 
-All your Rails apps should start off with a bunch of great defaults. It's like Laravel Spark, for Rails.
+All your Rails apps should start off with a bunch of great defaults but it wouldn't make you angry and get started over and over again.
 
 ## Getting Started
-
-Jumpstart is a Rails template, so you pass it in as an option when creating a new app.
 
 #### Requirements
 
@@ -19,12 +17,20 @@ You'll need the following installed to run the template successfully:
 * Yarn - `brew install yarn` or [Install Yarn](https://yarnpkg.com/en/docs/install)
 * Foreman (optional) - `gem install foreman` - helps run all your processes in development
 
+
 #### Creating a new app
 
 1. Kickoff
 
 ```bash
-DISABLE_SPRING=1 rails new [app_name] -d postgresql -m template.rb
+rails new [app] -d postgresql -m https://raw.githubusercontent.com/repaera/startup/master/template.rb
+```
+
+Or if you have downloaded this repo, you can reference template.rb locally:
+
+
+```bash
+DISABLE_SPRING=1 rails new [app] -d postgresql -m template.rb
 ```
 
 2. Add-on Devise model (for admin, staff, etc/ control panel side)
@@ -45,7 +51,7 @@ DISABLE_SPRING=1 rails generate active_admin:install
 
 5. Populate database credential in `database.yml`
 6. Migrate database
-7. Downgrade webpack-dev-server into 3.11.2
+7. Downgrade webpack-dev-server into exact 3.11.2
 
 
 #### Running your app
