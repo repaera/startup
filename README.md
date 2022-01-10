@@ -14,6 +14,7 @@ You'll need the following installed to run the template successfully:
 * Database - we recommend Postgres, but you can use MySQL, SQLite3, etc
 * Redis - For ActionCable support
 * ImageMagick or libvips for ActiveStorage variants
+* Node 14+
 * Yarn - `brew install yarn` or [Install Yarn](https://yarnpkg.com/en/docs/install)
 * Foreman (optional) - `gem install foreman` - helps run all your processes in development
 
@@ -23,7 +24,7 @@ You'll need the following installed to run the template successfully:
 1. Kickoff
 
 ```bash
-rails new [app] -d postgresql -m https://raw.githubusercontent.com/repaera/startup/master/template.rb
+DISABLE_SPRING=1 rails new [app] -d postgresql -m https://raw.githubusercontent.com/repaera/startup/master/template.rb
 ```
 
 Or if you have downloaded this repo, you can reference template.rb locally:
@@ -36,12 +37,12 @@ DISABLE_SPRING=1 rails new [app] -d postgresql -m template.rb
 2. Add-on Devise model (for admin, staff, etc/ control panel side)
 
 ```bash
-rails generate devise [MODELNAME]
+DISABLE_SPRING=1 rails generate devise [MODELNAME]
 ```
 
 3. Generate Devise views for each generated model
 ```bash
-rails generate devise:views [model(s)]
+DISABLE_SPRING=1 rails generate devise:views [model(s)]
 ```
 
 4. Generate ActiveAdmin scaffold

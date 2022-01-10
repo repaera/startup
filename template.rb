@@ -76,6 +76,7 @@ def add_gems
   gem 'activerecord-import', require: false  # https://github.com/zdennis/activerecord-import#requiring
   gem 'simple_form'  # https://github.com/heartcombo/simple_form
   gem 'cocoon'  # https://github.com/nathanvda/cocoon
+  gem 'ice_cube', '~> 0.16.4'  # http://seejohnrun.github.com/ice_cube/
   gem 'cells-rails'  # https://github.com/trailblazer/cells view_component alternative
   gem 'view_component'  # https://viewcomponent.org/guide/getting-started.html
   gem 'breadcrumbs_on_rails'  # https://github.com/weppos/breadcrumbs_on_rails
@@ -87,6 +88,12 @@ def add_gems
   gem 'redcarpet', '~> 3.5', '>= 3.5.1'  # https://github.com/vmg/redcarpet/
   gem 'activeadmin'  # https://activeadmin.info/documentation.html
   gem 'aasm', '~> 5.2'  # https://github.com/aasm/aasm
+  gem 'canonical-rails', github: 'jumph4x/canonical-rails'
+  gem 'hashid-rails', '~> 1.4', '>= 1.4.1'  # https://github.com/jcypret/hashid-rails
+  gem 'acts_as_tenant', '~> 0.5.1'  # https://github.com/ErwinM/acts_as_tenant
+  gem 'acts_as_list', '~> 1.0', '>= 1.0.4'  # http://github.com/brendon/acts_as_list
+  gem 'invisible_captcha', '~> 2.0'  # https://github.com/markets/invisible_captcha
+  gem 'merit', '~> 4.0', '>= 4.0.2'  # https://github.com/tute/merit
   gem 'dalli', '~> 2.7', '>= 2.7.11'  # https://github.com/petergoldstein/dalli/
   gem 'connection_pool', '~> 2.2', '>= 2.2.5'  # https://github.com/mperham/connection_pool/
   gem 'database_cleaner', '~> 2.0', '>= 2.0.1'  # https://github.com/DatabaseCleaner/database_cleaner/
@@ -114,6 +121,7 @@ def add_gems
   gem 'acts_as_list', '~> 1.0', '>= 1.0.4'  # https://github.com/brendon/acts_as_list
   gem 'acts_as_votable'  # https://github.com/ryanto/acts_as_votable
   gem 'oj'  # https://github.com/ohler55/oj
+  gem 'anycable', '~> 1.2'  # https://github.com/anycable/anycable
   gem 'slowpoke'  # https://github.com/ankane/slowpoke
   gem 'lograge'  # https://github.com/roidrage/lograge
   gem 'safely_block'  # https://github.com/ankane/safely
@@ -140,6 +148,7 @@ def add_gems
   gem 'fast_blank', '~> 1.0'  # https://github.com/SamSaffron/fast_blank/
   gem 'httparty', '~> 0.18.1'  # https://github.com/jnunemaker/httparty/
   gem 'sanitize', '~> 6.0'  # https://github.com/rgrove/sanitize/
+  gem 'paranoia', '~> 2.5'  # https://github.com/rubysherpas/paranoia
   gem 'rinku', '~> 2.0', '>= 2.0.6'  # https://github.com/vmg/rinku/
   gem 'diffy', '~> 3.4'  # https://github.com/samg/diffy/
   gem 'fastimage', '~> 2.2', '>= 2.2.4'  # https://github.com/sdsykes/fastimage/
